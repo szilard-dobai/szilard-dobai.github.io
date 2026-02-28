@@ -1,9 +1,9 @@
 export type Experience = {
-  role: string
-  company: string
-  period: string
-  description: string
-}
+  role: string;
+  company: string;
+  period: string;
+  description: string;
+};
 
 export const skills: string[] = [
   "TypeScript",
@@ -18,7 +18,7 @@ export const skills: string[] = [
   "Terraform",
   "GCP",
   "Git",
-]
+];
 
 export const experience: Experience[] = [
   {
@@ -49,13 +49,12 @@ export const experience: Experience[] = [
     description:
       "Researched and built machine learning models to estimate passenger flow in airports using Python, Keras, and Scikit-Learn.",
   },
-]
+];
 
 export const aboutText =
-  "Senior Full-Stack Engineer with a primary focus on front-end development. Committed to delivering excellence through meticulous attention to detail. I enjoy building useful side projects and shipping them to real users."
+  "Senior Full-Stack Engineer with a primary focus on front-end development. Committed to delivering excellence through meticulous attention to detail.";
 
 export const socialLinks = {
   github: "https://github.com/szilard-dobai",
   linkedin: "https://linkedin.com/in/szilard-dobai",
-  email: "mailto:szilard-dobai@proton.me",
-}
+};

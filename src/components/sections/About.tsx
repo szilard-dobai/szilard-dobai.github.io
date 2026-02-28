@@ -1,9 +1,9 @@
-import { motion } from "motion/react"
-import { Badge } from "@/components/ui/badge"
-import { Separator } from "@/components/ui/separator"
-import { Button } from "@/components/ui/button"
-import { Github, Linkedin, Mail } from "lucide-react"
-import { skills, experience, aboutText, socialLinks } from "@/data/about"
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
+import { aboutText, experience, skills, socialLinks } from "@/data/about";
+import { Github, Linkedin } from "lucide-react";
+import { motion } from "motion/react";
 
 export function About() {
   return (
@@ -76,22 +76,25 @@ export function About() {
           className="flex gap-2"
         >
           <Button variant="ghost" size="icon" asChild>
-            <a href={socialLinks.github} target="_blank" rel="noopener noreferrer">
+            <a
+              href={socialLinks.github}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Github className="h-5 w-5" />
             </a>
           </Button>
           <Button variant="ghost" size="icon" asChild>
-            <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer">
+            <a
+              href={socialLinks.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Linkedin className="h-5 w-5" />
-            </a>
-          </Button>
-          <Button variant="ghost" size="icon" asChild>
-            <a href={socialLinks.email}>
-              <Mail className="h-5 w-5" />
             </a>
           </Button>
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
