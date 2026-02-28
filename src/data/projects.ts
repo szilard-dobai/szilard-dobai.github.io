@@ -11,28 +11,29 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    slug: "project-one",
-    name: "Project One",
-    logo: "/projects/project-one/logo.svg",
-    oneLiner: "A short description of what this project does",
+    slug: "yearly",
+    name: "Yearly",
+    logo: "/projects/yearly/logo.svg",
+    oneLiner: "Your year, at a glance",
     description:
-      "A longer description that explains the project in more detail. This can span multiple sentences and describe the tech stack, motivation, and key features.",
+      "A tool that automatically turns your travel history into a clean, share-ready calendar. No design tools, no manual emojis, no fiddly alignment — just add your trips, generate your calendar, and share it with the world.",
     images: [
-      "/projects/project-one/screenshot-1.svg",
-      "/projects/project-one/screenshot-2.svg",
+      "/projects/yearly/screenshot-1.svg",
     ],
-    appUrl: "https://example.com",
-    githubUrl: "https://github.com/example/project-one",
+    appUrl: "https://yearly.world",
+    githubUrl: "https://github.com/szilard-dobai/yearly",
   },
   {
-    slug: "project-two",
-    name: "Project Two",
-    logo: "/projects/project-two/logo.svg",
-    oneLiner: "Another project with a catchy one-liner",
+    slug: "audiocalendar",
+    name: "AudioCalendar",
+    logo: "/projects/audiocalendar/logo.svg",
+    oneLiner: "Never miss a beat",
     description:
-      "Another detailed description. The user will replace these placeholder entries with real project data, including actual screenshots and descriptions.",
-    images: ["/projects/project-two/screenshot-1.svg"],
-    appUrl: "https://example.com",
-    githubUrl: "https://github.com/example/project-two",
+      "Connects your Google Calendar with Spotify to automatically track what music you listen to and when. Built with Next.js, Supabase, and the Spotify API in a Turborepo monorepo.",
+    images: [
+      "/projects/audiocalendar/screenshot-1.svg",
+    ],
+    appUrl: "https://audiocalendar.app",
+    githubUrl: "https://github.com/szilard-dobai/audiocalendar",
   },
 ]

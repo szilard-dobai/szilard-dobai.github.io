@@ -14,10 +14,10 @@ export function Hero() {
           Szilard Dobai
         </h1>
         <p className="mt-4 text-lg text-muted-foreground sm:text-xl">
-          Fullstack Software Engineer
+          Senior Full Stack Engineer
         </p>
         <p className="mt-2 max-w-lg text-muted-foreground">
-          Building things for the web. Here are some of my recent projects.
+          Building things for the web. Here are some of my recent side projects.
         </p>
       </motion.div>
       <motion.div

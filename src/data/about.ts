@@ -7,35 +7,55 @@ export type Experience = {
 
 export const skills: string[] = [
   "TypeScript",
+  "JavaScript",
   "React",
+  "Next.js",
   "Node.js",
-  "Python",
+  "GraphQL",
+  "tRPC",
   "PostgreSQL",
-  "AWS",
-  "Docker",
+  "Prisma",
+  "Terraform",
+  "GCP",
   "Git",
 ]
 
 export const experience: Experience[] = [
   {
-    role: "Fullstack Software Engineer",
-    company: "Company Name",
-    period: "2023 — Present",
-    description: "Brief description of your role and key accomplishments.",
+    role: "Senior Full Stack Engineer",
+    company: "Save My Exams",
+    period: "Dec 2023 — Present",
+    description:
+      "Building and maintaining the platform that helps students ace their exams, with a focus on React and TypeScript.",
   },
   {
-    role: "Software Engineer",
-    company: "Previous Company",
-    period: "2021 — 2023",
-    description: "Brief description of your role and key accomplishments.",
+    role: "Full Stack Engineer",
+    company: "Hier Foods",
+    period: "Jun 2022 — Oct 2023",
+    description:
+      "Part of a 4-person engineering team building internal and customer-facing software. Migrated the database from Firebase to PostgreSQL, streamlined deployments with Terraform on GCP, and reduced a 3-4 hour weekly process to 5 minutes.",
+  },
+  {
+    role: "Frontend Developer",
+    company: "[e-spres-oh]",
+    period: "Nov 2020 — Jun 2022",
+    description:
+      "Core frontend team member on a cloud-based IoT product that helped the client startup raise multi-million dollar funding. Wrote unit, integration, and E2E tests, and automated deployment pipelines.",
+  },
+  {
+    role: "Software Engineer Intern",
+    company: "Amorph Systems",
+    period: "Mar 2019 — Sep 2019",
+    description:
+      "Researched and built machine learning models to estimate passenger flow in airports using Python, Keras, and Scikit-Learn.",
   },
 ]
 
 export const aboutText =
-  "A fullstack software engineer who enjoys building useful things. Placeholder text — replace with your own bio."
+  "Senior Full-Stack Engineer with a primary focus on front-end development. Committed to delivering excellence through meticulous attention to detail. I enjoy building useful side projects and shipping them to real users."
 
 export const socialLinks = {
   github: "https://github.com/szilard-dobai",
   linkedin: "https://linkedin.com/in/szilard-dobai",
-  email: "mailto:your@email.com",
+  email: "mailto:szilard-dobai@proton.me",
 }
