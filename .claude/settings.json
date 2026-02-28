@@ -2,7 +2,20 @@
   "permissions": {
     "allow": [
       "Bash(npx shadcn@latest init -d -y)",
-      "Bash(npx shadcn@latest add button card badge separator avatar dialog -y)"
+      "Bash(npx shadcn@latest add button card badge separator avatar dialog -y)",
+      "Bash(npm install react-router motion)",
+      "Bash(git add package.json package-lock.json)",
+      "Bash(npx tsc -b --noEmit)",
+      "Bash(npx vite build)",
+      "Bash(git add src/data/projects.ts public/projects/project-one/logo.svg public/projects/project-two/logo.svg public/projects/project-one/screenshot-1.svg public/projects/project-one/screenshot-2.svg public/projects/project-two/screenshot-1.svg)",
+      "Bash(git add src/App.css src/App.tsx src/main.tsx src/components/layout/ src/pages/)",
+      "Bash(npx tsc -b)",
+      "Bash(git add src/components/sections/Hero.tsx src/pages/Home.tsx)",
+      "Bash(git add src/components/project/ProjectCard.tsx src/components/sections/ProjectsGrid.tsx)",
+      "Bash(git add src/data/about.ts src/components/sections/About.tsx)",
+      "Bash(git add src/pages/Home.tsx)",
+      "Bash(git add src/App.tsx)",
+      "Bash(git add src/components/project/ImageGallery.tsx src/pages/ProjectPage.tsx)"
     ]
   }
 }
