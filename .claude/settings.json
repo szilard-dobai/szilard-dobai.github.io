@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx shadcn@latest init -d -y)",
+      "Bash(npx shadcn@latest add button card badge separator avatar dialog -y)"
+    ]
+  }
+}
