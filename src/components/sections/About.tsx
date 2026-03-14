@@ -1,115 +1,100 @@
 import { Badge } from "@/components/ui/badge";
 import { aboutText, experience, skills, socialLinks } from "@/data/about";
-import { Github, Linkedin } from "lucide-react";
 import { motion } from "motion/react";
 
 export function About() {
   return (
-    <section id="about" className="py-32 px-6">
-      <div className="container mx-auto max-w-3xl">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-16"
-        >
-          <h2 className="text-sm font-medium tracking-widest uppercase text-muted-foreground mb-2">
-            About
-          </h2>
-          <p className="text-2xl font-semibold tracking-tight sm:text-3xl">
-            A bit about me
-          </p>
-          <p className="mt-6 text-muted-foreground leading-relaxed max-w-xl">
-            {aboutText}
-          </p>
-        </motion.div>
+    <section id="about" className="py-24 px-4 sm:px-6">
+      <div className="container mx-auto max-w-5xl">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="flex flex-col gap-8"
+          >
+            <div>
+              <h2 className="text-3xl font-bold tracking-tight mb-6">
+                About Me
+              </h2>
+              <p className="text-muted-foreground leading-relaxed">
+                {aboutText}
+              </p>
+            </div>
 
-        {/* Skills */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="mb-16"
-        >
-          <h3 className="text-xs font-medium tracking-widest uppercase text-muted-foreground mb-4">
-            Skills
-          </h3>
-          <div className="flex flex-wrap gap-2">
-            {skills.map((skill) => (
-              <Badge
-                key={skill}
-                variant="secondary"
-                className="font-normal text-xs px-3 py-1"
-              >
-                {skill}
-              </Badge>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Experience */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="mb-16"
-        >
-          <h3 className="text-xs font-medium tracking-widest uppercase text-muted-foreground mb-6">
-            Experience
-          </h3>
-          <div className="space-y-8">
-            {experience.map((exp) => (
-              <div
-                key={`${exp.company}-${exp.period}`}
-                className="group relative pl-6 before:absolute before:left-0 before:top-[10px] before:h-1.5 before:w-1.5 before:rounded-full before:bg-muted-foreground/40"
-              >
-                <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
-                  <h4 className="font-medium text-sm">{exp.role}</h4>
-                  <span className="text-xs text-muted-foreground tabular-nums">
-                    {exp.period}
-                  </span>
-                </div>
-                <p className="text-sm text-muted-foreground mt-0.5">
-                  {exp.company}
-                </p>
-                <p className="mt-2 text-sm text-muted-foreground/80 leading-relaxed">
-                  {exp.description}
-                </p>
+            <div>
+              <h3 className="text-lg font-bold mb-4">Core Technologies</h3>
+              <div className="flex flex-wrap gap-3">
+                {skills.map((skill) => (
+                  <Badge
+                    key={skill}
+                    variant="outline"
+                    className="px-4 py-2 text-sm font-medium"
+                  >
+                    {skill}
+                  </Badge>
+                ))}
               </div>
-            ))}
-          </div>
-        </motion.div>
+            </div>
 
-        {/* Social */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="flex gap-4"
-        >
-          <a
-            href={socialLinks.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+            <div className="flex items-center gap-4 mt-2">
+              <a
+                href={socialLinks.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+              >
+                GitHub
+              </a>
+              <a
+                href={socialLinks.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+              >
+                LinkedIn
+              </a>
+            </div>
+          </motion.div>
+
+          {/* Experience Timeline */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.15 }}
           >
-            <Github className="h-4 w-4" />
-            <span>GitHub</span>
-          </a>
-          <a
-            href={socialLinks.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-          >
-            <Linkedin className="h-4 w-4" />
-            <span>LinkedIn</span>
-          </a>
-        </motion.div>
+            <h2 className="text-3xl font-bold tracking-tight mb-8">
+              Experience
+            </h2>
+            <div className="relative border-l-2 border-border ml-3 space-y-10 pl-8">
+              {experience.map((exp, index) => (
+                <div key={`${exp.company}-${exp.period}`} className="relative">
+                  <div
+                    className={`absolute -left-[41px] top-1 h-5 w-5 rounded-full border-4 border-background ${
+                      index === 0 ? "bg-primary" : "bg-border"
+                    }`}
+                  />
+                  <div className="flex flex-col gap-1">
+                    <span
+                      className={`text-sm font-medium ${
+                        index === 0 ? "text-primary" : "text-muted-foreground"
+                      }`}
+                    >
+                      {exp.period}
+                    </span>
+                    <h4 className="text-lg font-bold">{exp.role}</h4>
+                    <span className="text-muted-foreground">{exp.company}</span>
+                    <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                      {exp.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

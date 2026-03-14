@@ -23,7 +23,7 @@ export function ImageGallery({ images, alt }: ImageGalleryProps) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="cursor-pointer overflow-hidden rounded-xl border border-border/60"
+          className="cursor-pointer overflow-hidden rounded-xl border border-border"
           onClick={() => setSelectedIndex(0)}
         >
           <img
@@ -42,7 +42,7 @@ export function ImageGallery({ images, alt }: ImageGalleryProps) {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.08 }}
                 onClick={() => setSelectedIndex(index)}
-                className="flex-shrink-0 overflow-hidden rounded-lg border border-border/60 transition-all hover:border-foreground/30 data-[active=true]:border-foreground data-[active=true]:ring-1 data-[active=true]:ring-foreground/20"
+                className="cursor-pointer flex-shrink-0 overflow-hidden rounded-lg border-2 border-border transition-all hover:border-primary/50 data-[active=true]:border-primary"
                 data-active={selectedIndex === index}
               >
                 <img
@@ -62,10 +62,11 @@ export function ImageGallery({ images, alt }: ImageGalleryProps) {
           <div className="relative flex items-center justify-center">
             {images.length > 1 && (
               <button
-                className="absolute left-3 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-background/90 backdrop-blur-sm border border-border/60 text-foreground/70 hover:text-foreground transition-colors"
+                className="cursor-pointer absolute left-3 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-background/90 backdrop-blur-sm border border-border text-muted-foreground hover:text-foreground transition-colors"
                 onClick={showPrev}
+                aria-label="Previous image"
               >
-                <ChevronLeft className="h-4 w-4" />
+                <ChevronLeft className="h-5 w-5" />
               </button>
             )}
 
@@ -86,10 +87,11 @@ export function ImageGallery({ images, alt }: ImageGalleryProps) {
 
             {images.length > 1 && (
               <button
-                className="absolute right-3 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-background/90 backdrop-blur-sm border border-border/60 text-foreground/70 hover:text-foreground transition-colors"
+                className="cursor-pointer absolute right-3 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-background/90 backdrop-blur-sm border border-border text-muted-foreground hover:text-foreground transition-colors"
                 onClick={showNext}
+                aria-label="Next image"
               >
-                <ChevronRight className="h-4 w-4" />
+                <ChevronRight className="h-5 w-5" />
               </button>
             )}
           </div>

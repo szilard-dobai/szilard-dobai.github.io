@@ -14,9 +14,6 @@ export const skills: string[] = [
   "GraphQL",
   "tRPC",
   "PostgreSQL",
-  "Prisma",
-  "Terraform",
-  "GCP",
   "Git",
 ];
 
@@ -38,9 +35,9 @@ export const experience: Experience[] = [
   {
     role: "Frontend Developer",
     company: "[e-spres-oh]",
-    period: "Nov 2020 — Jun 2022",
+    period: "Jul 2020 — Jun 2022",
     description:
-      "Core frontend team member on a cloud-based IoT product that helped the client startup raise multi-million dollar funding. Wrote unit, integration, and E2E tests, and automated deployment pipelines.",
+      "Core frontend team member on a cloud-based IoT product that helped the client startup raise multi-million dollar funding.",
   },
   {
     role: "Software Engineer Intern",

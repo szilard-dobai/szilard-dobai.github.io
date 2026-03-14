@@ -1,3 +1,4 @@
+import { useEffect } from "react"
 import { useParams, Link, Navigate } from "react-router"
 import { motion } from "motion/react"
 import { Button } from "@/components/ui/button"
@@ -9,10 +10,14 @@ export default function ProjectPage() {
   const { slug } = useParams<{ slug: string }>()
   const project = projects.find((p) => p.slug === slug)
 
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [slug])
+
   if (!project) return <Navigate to="/" replace />
 
   return (
-    <div className="container mx-auto max-w-3xl px-6 py-16">
+    <div className="container mx-auto max-w-3xl px-4 sm:px-6 pt-8 pb-32">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -20,7 +25,7 @@ export default function ProjectPage() {
       >
         <Link
           to="/"
-          className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-12"
+          className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors mb-6"
         >
           <ArrowLeft className="h-4 w-4" />
           Back
@@ -30,16 +35,14 @@ export default function ProjectPage() {
           <img
             src={project.logo}
             alt={`${project.name} logo`}
-            className="h-10 w-10 rounded-lg"
+            className="h-12 w-12 rounded-lg"
           />
-          <div>
-            <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">
-              {project.name}
-            </h1>
-          </div>
+          <h1 className="text-3xl font-bold tracking-tight">
+            {project.name}
+          </h1>
         </div>
 
-        <p className="text-muted-foreground mb-10">
+        <p className="text-lg text-muted-foreground mb-10">
           {project.oneLiner}
         </p>
 
@@ -50,15 +53,15 @@ export default function ProjectPage() {
         </p>
 
         <div className="mt-10 flex gap-3">
-          <Button size="sm" asChild>
+          <Button className="shadow-lg shadow-primary/25" asChild>
             <a href={project.appUrl} target="_blank" rel="noopener noreferrer">
-              <ExternalLink className="mr-2 h-3.5 w-3.5" />
+              <ExternalLink className="mr-2 h-4 w-4" />
               Live App
             </a>
           </Button>
-          <Button variant="outline" size="sm" asChild>
+          <Button variant="outline" asChild>
             <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-              <Github className="mr-2 h-3.5 w-3.5" />
+              <Github className="mr-2 h-4 w-4" />
               Source Code
             </a>
           </Button>
