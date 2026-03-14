@@ -1,6 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { aboutText, experience, skills } from "@/data/about";
 import { SocialLinks } from "@/components/shared/SocialLinks";
+import { cn } from "@/lib/utils";
 import { motion } from "motion/react";
 
 export function About() {
@@ -56,15 +57,17 @@ export function About() {
               {experience.map((exp, index) => (
                 <div key={`${exp.company}-${exp.period}`} className="relative">
                   <div
-                    className={`absolute -left-[41px] top-1 h-5 w-5 rounded-full border-4 border-background ${
+                    className={cn(
+                      "absolute -left-[41px] top-1 h-5 w-5 rounded-full border-4 border-background",
                       index === 0 ? "bg-primary" : "bg-border"
-                    }`}
+                    )}
                   />
                   <div className="flex flex-col gap-1">
                     <span
-                      className={`text-sm font-medium ${
+                      className={cn(
+                        "text-sm font-medium",
                         index === 0 ? "text-primary" : "text-muted-foreground"
-                      }`}
+                      )}
                     >
                       {exp.period}
                     </span>
