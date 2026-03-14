@@ -1,5 +1,6 @@
 import { Badge } from "@/components/ui/badge";
-import { aboutText, experience, skills, socialLinks } from "@/data/about";
+import { aboutText, experience, skills } from "@/data/about";
+import { SocialLinks } from "@/components/shared/SocialLinks";
 import { motion } from "motion/react";
 
 export function About() {
@@ -38,24 +39,7 @@ export function About() {
               </div>
             </div>
 
-            <div className="flex items-center gap-4 mt-2">
-              <a
-                href={socialLinks.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
-              >
-                GitHub
-              </a>
-              <a
-                href={socialLinks.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
-              >
-                LinkedIn
-              </a>
-            </div>
+            <SocialLinks variant="text" className="flex items-center gap-4 mt-2" />
           </motion.div>
 
           {/* Experience Timeline */}
