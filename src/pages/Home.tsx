@@ -19,7 +19,7 @@ export default function Home() {
       sessionStorage.setItem("homeScrollY", String(window.scrollY))
     }
 
-    window.addEventListener("scroll", handleScroll)
+    window.addEventListener("scroll", handleScroll, { passive: true })
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
