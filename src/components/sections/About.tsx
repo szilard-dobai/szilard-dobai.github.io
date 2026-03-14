@@ -1,64 +1,81 @@
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
 import { aboutText, experience, skills, socialLinks } from "@/data/about";
 import { Github, Linkedin } from "lucide-react";
 import { motion } from "motion/react";
 
 export function About() {
   return (
-    <section id="about" className="py-24 px-4">
-      <div className="container mx-auto max-w-2xl">
+    <section id="about" className="py-32 px-6">
+      <div className="container mx-auto max-w-3xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.6 }}
+          className="mb-16"
         >
-          <h2 className="text-3xl font-bold tracking-tight">About</h2>
-          <p className="mt-4 text-muted-foreground leading-relaxed">
+          <h2 className="text-sm font-medium tracking-widest uppercase text-muted-foreground mb-2">
+            About
+          </h2>
+          <p className="text-2xl font-semibold tracking-tight sm:text-3xl">
+            A bit about me
+          </p>
+          <p className="mt-6 text-muted-foreground leading-relaxed max-w-xl">
             {aboutText}
           </p>
         </motion.div>
 
-        <Separator className="my-8" />
-
+        {/* Skills */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
+          className="mb-16"
         >
-          <h3 className="text-xl font-semibold mb-4">Skills</h3>
+          <h3 className="text-xs font-medium tracking-widest uppercase text-muted-foreground mb-4">
+            Skills
+          </h3>
           <div className="flex flex-wrap gap-2">
             {skills.map((skill) => (
-              <Badge key={skill} variant="secondary">
+              <Badge
+                key={skill}
+                variant="secondary"
+                className="font-normal text-xs px-3 py-1"
+              >
                 {skill}
               </Badge>
             ))}
           </div>
         </motion.div>
 
-        <Separator className="my-8" />
-
+        {/* Experience */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
+          className="mb-16"
         >
-          <h3 className="text-xl font-semibold mb-6">Experience</h3>
-          <div className="space-y-6">
+          <h3 className="text-xs font-medium tracking-widest uppercase text-muted-foreground mb-6">
+            Experience
+          </h3>
+          <div className="space-y-8">
             {experience.map((exp) => (
-              <div key={`${exp.company}-${exp.period}`}>
-                <div className="flex items-baseline justify-between">
-                  <h4 className="font-medium">{exp.role}</h4>
-                  <span className="text-sm text-muted-foreground whitespace-nowrap ml-4">
+              <div
+                key={`${exp.company}-${exp.period}`}
+                className="group relative pl-6 before:absolute before:left-0 before:top-[10px] before:h-1.5 before:w-1.5 before:rounded-full before:bg-muted-foreground/40"
+              >
+                <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+                  <h4 className="font-medium text-sm">{exp.role}</h4>
+                  <span className="text-xs text-muted-foreground tabular-nums">
                     {exp.period}
                   </span>
                 </div>
-                <p className="text-sm text-muted-foreground">{exp.company}</p>
-                <p className="mt-1 text-sm text-muted-foreground">
+                <p className="text-sm text-muted-foreground mt-0.5">
+                  {exp.company}
+                </p>
+                <p className="mt-2 text-sm text-muted-foreground/80 leading-relaxed">
                   {exp.description}
                 </p>
               </div>
@@ -66,33 +83,32 @@ export function About() {
           </div>
         </motion.div>
 
-        <Separator className="my-8" />
-
+        {/* Social */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="flex gap-2"
+          className="flex gap-4"
         >
-          <Button variant="ghost" size="icon" asChild>
-            <a
-              href={socialLinks.github}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Github className="h-5 w-5" />
-            </a>
-          </Button>
-          <Button variant="ghost" size="icon" asChild>
-            <a
-              href={socialLinks.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Linkedin className="h-5 w-5" />
-            </a>
-          </Button>
+          <a
+            href={socialLinks.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <Github className="h-4 w-4" />
+            <span>GitHub</span>
+          </a>
+          <a
+            href={socialLinks.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <Linkedin className="h-4 w-4" />
+            <span>LinkedIn</span>
+          </a>
         </motion.div>
       </div>
     </section>

@@ -1,7 +1,6 @@
 import { useState } from "react"
 import { motion, AnimatePresence } from "motion/react"
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
-import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 
 type ImageGalleryProps = {
@@ -19,37 +18,37 @@ export function ImageGallery({ images, alt }: ImageGalleryProps) {
 
   return (
     <>
-      <div className="grid gap-4">
+      <div className="grid gap-3">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="cursor-pointer overflow-hidden rounded-lg border"
+          className="cursor-pointer overflow-hidden rounded-xl border border-border/60"
           onClick={() => setSelectedIndex(0)}
         >
           <img
             src={images[0]}
             alt={alt}
-            className="w-full object-cover"
+            className="w-full object-cover transition-transform duration-500 hover:scale-[1.02]"
           />
         </motion.div>
 
         {images.length > 1 && (
-          <div className="flex gap-2 overflow-x-auto">
+          <div className="flex gap-2 overflow-x-auto pb-1">
             {images.map((image, index) => (
               <motion.button
                 key={image}
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
+                transition={{ delay: index * 0.08 }}
                 onClick={() => setSelectedIndex(index)}
-                className="flex-shrink-0 overflow-hidden rounded-md border-2 transition-colors hover:border-foreground/40 data-[active=true]:border-foreground"
+                className="flex-shrink-0 overflow-hidden rounded-lg border border-border/60 transition-all hover:border-foreground/30 data-[active=true]:border-foreground data-[active=true]:ring-1 data-[active=true]:ring-foreground/20"
                 data-active={selectedIndex === index}
               >
                 <img
                   src={image}
                   alt={`${alt} ${index + 1}`}
-                  className="h-20 w-32 object-cover"
+                  className="h-16 w-28 object-cover"
                 />
               </motion.button>
             ))}
@@ -62,14 +61,12 @@ export function ImageGallery({ images, alt }: ImageGalleryProps) {
           <DialogTitle className="sr-only">{alt}</DialogTitle>
           <div className="relative flex items-center justify-center">
             {images.length > 1 && (
-              <Button
-                variant="ghost"
-                size="icon"
-                className="absolute left-2 z-10 bg-background/80 backdrop-blur-sm"
+              <button
+                className="absolute left-3 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-background/90 backdrop-blur-sm border border-border/60 text-foreground/70 hover:text-foreground transition-colors"
                 onClick={showPrev}
               >
-                <ChevronLeft className="h-5 w-5" />
-              </Button>
+                <ChevronLeft className="h-4 w-4" />
+              </button>
             )}
 
             <AnimatePresence mode="wait">
@@ -78,24 +75,22 @@ export function ImageGallery({ images, alt }: ImageGalleryProps) {
                   key={selectedIndex}
                   src={images[selectedIndex]}
                   alt={`${alt} ${selectedIndex + 1}`}
-                  className="max-h-[80vh] rounded-lg object-contain"
-                  initial={{ opacity: 0, scale: 0.95 }}
+                  className="max-h-[80vh] rounded-xl object-contain"
+                  initial={{ opacity: 0, scale: 0.97 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
+                  exit={{ opacity: 0, scale: 0.97 }}
                   transition={{ duration: 0.2 }}
                 />
               )}
             </AnimatePresence>
 
             {images.length > 1 && (
-              <Button
-                variant="ghost"
-                size="icon"
-                className="absolute right-2 z-10 bg-background/80 backdrop-blur-sm"
+              <button
+                className="absolute right-3 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-background/90 backdrop-blur-sm border border-border/60 text-foreground/70 hover:text-foreground transition-colors"
                 onClick={showNext}
               >
-                <ChevronRight className="h-5 w-5" />
-              </Button>
+                <ChevronRight className="h-4 w-4" />
+              </button>
             )}
           </div>
         </DialogContent>
