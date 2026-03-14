@@ -1,20 +1,20 @@
-import { useEffect } from "react"
-import { useParams, Link, Navigate } from "react-router"
-import { motion } from "motion/react"
-import { Button } from "@/components/ui/button"
-import { ArrowLeft, ExternalLink, Github } from "lucide-react"
-import { projects } from "@/data/projects"
-import { ImageGallery } from "@/components/project/ImageGallery"
+import { useEffect } from "react";
+import { useParams, Link, Navigate } from "react-router";
+import { motion } from "motion/react";
+import { Button } from "@/components/ui/button";
+import { ArrowLeft, ExternalLink, Github } from "lucide-react";
+import { projects } from "@/data/projects";
+import { ImageGallery } from "@/components/project/ImageGallery";
 
 export default function ProjectPage() {
-  const { slug } = useParams<{ slug: string }>()
-  const project = projects.find((p) => p.slug === slug)
+  const { slug } = useParams<{ slug: string }>();
+  const project = projects.find((p) => p.slug === slug);
 
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [slug])
+    window.scrollTo(0, 0);
+  }, [slug]);
 
-  if (!project) return <Navigate to="/" replace />
+  if (!project) return <Navigate to="/" replace />;
 
   return (
     <div className="container mx-auto max-w-3xl px-4 sm:px-6 pt-8 pb-32">
@@ -37,9 +37,7 @@ export default function ProjectPage() {
             alt={`${project.name} logo`}
             className="h-12 w-12 rounded-lg"
           />
-          <h1 className="text-3xl font-bold tracking-tight">
-            {project.name}
-          </h1>
+          <h1 className="text-3xl font-bold tracking-tight">{project.name}</h1>
         </div>
 
         <p className="text-lg text-muted-foreground mb-10">
@@ -60,7 +58,11 @@ export default function ProjectPage() {
             </a>
           </Button>
           <Button variant="outline" asChild>
-            <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+            <a
+              href={project.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Github className="mr-2 h-4 w-4" />
               Source Code
             </a>
@@ -68,5 +70,5 @@ export default function ProjectPage() {
         </div>
       </motion.div>
     </div>
-  )
+  );
 }

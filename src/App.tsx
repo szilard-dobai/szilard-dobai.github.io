@@ -1,12 +1,12 @@
-import { Routes, Route, Navigate, useLocation } from "react-router"
-import { AnimatePresence, motion } from "motion/react"
-import { Header } from "@/components/layout/Header"
-import { Footer } from "@/components/layout/Footer"
-import Home from "@/pages/Home"
-import ProjectPage from "@/pages/ProjectPage"
+import { Routes, Route, Navigate, useLocation } from "react-router";
+import { AnimatePresence, motion } from "motion/react";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
+import Home from "@/pages/Home";
+import ProjectPage from "@/pages/ProjectPage";
 
 function AnimatedRoutes() {
-  const location = useLocation()
+  const location = useLocation();
 
   return (
     <AnimatePresence mode="wait">
@@ -24,7 +24,7 @@ function AnimatedRoutes() {
         </Routes>
       </motion.div>
     </AnimatePresence>
-  )
+  );
 }
 
 export default function App() {
@@ -36,5 +36,5 @@ export default function App() {
       </main>
       <Footer />
     </div>
-  )
+  );
 }

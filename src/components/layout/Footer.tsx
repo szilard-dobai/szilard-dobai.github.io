@@ -1,6 +1,6 @@
-import { SocialLinks } from "@/components/shared/SocialLinks"
+import { SocialLinks } from "@/components/shared/SocialLinks";
 
-const CURRENT_YEAR = new Date().getFullYear()
+const CURRENT_YEAR = new Date().getFullYear();
 
 export function Footer() {
   return (
@@ -12,5 +12,5 @@ export function Footer() {
         <SocialLinks variant="text" className="flex items-center gap-4" />
       </div>
     </footer>
-  )
+  );
 }

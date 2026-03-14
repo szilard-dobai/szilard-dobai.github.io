@@ -40,7 +40,10 @@ export function About() {
               </div>
             </div>
 
-            <SocialLinks variant="text" className="flex items-center gap-4 mt-2" />
+            <SocialLinks
+              variant="text"
+              className="flex items-center gap-4 mt-2"
+            />
           </motion.div>
 
           {/* Experience Timeline */}

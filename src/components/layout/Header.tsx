@@ -40,7 +40,10 @@ export function Header() {
           )}
           <div className="flex items-center gap-1">
             <ThemeToggle />
-            <SocialLinks variant="icon" className="hidden sm:flex items-center gap-1" />
+            <SocialLinks
+              variant="icon"
+              className="hidden sm:flex items-center gap-1"
+            />
           </div>
         </nav>
       </div>
