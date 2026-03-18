@@ -52,7 +52,7 @@ export default function ProjectPage() {
 
         <div className="mt-10 flex gap-3">
           <Button className="shadow-lg shadow-primary/25" asChild>
-            <a href={project.appUrl} target="_blank" rel="noopener noreferrer">
+            <a href={`${project.appUrl}?utm_source=portfolio&utm_medium=website&utm_campaign=${project.slug}`} target="_blank" rel="noopener noreferrer">
               <ExternalLink className="mr-2 h-4 w-4" />
               Live App
             </a>
