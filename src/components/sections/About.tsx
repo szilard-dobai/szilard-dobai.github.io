@@ -1,6 +1,6 @@
+import { SocialLinks } from "@/components/shared/SocialLinks";
 import { Badge } from "@/components/ui/badge";
 import { aboutText, experience, skills } from "@/data/about";
-import { SocialLinks } from "@/components/shared/SocialLinks";
 import { cn } from "@/lib/utils";
 import { motion } from "motion/react";
 
@@ -46,7 +46,6 @@ export function About() {
             />
           </motion.div>
 
-          {/* Experience Timeline */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -61,7 +60,7 @@ export function About() {
                 <div key={`${exp.company}-${exp.period}`} className="relative">
                   <div
                     className={cn(
-                      "absolute -left-[41px] top-1 h-5 w-5 rounded-full border-4 border-background",
+                      "absolute -left-[43px] h-5 w-5 rounded-full border-4 border-background",
                       index === 0 ? "bg-primary" : "bg-border"
                     )}
                   />

@@ -1,12 +1,11 @@
-import { motion } from "motion/react";
 import { Button } from "@/components/ui/button";
-import { ArrowDown } from "lucide-react";
 import { socialLinks } from "@/data/about";
+import { ArrowDown } from "lucide-react";
+import { motion } from "motion/react";
 
 export function Hero() {
   return (
     <section className="relative min-h-[calc(100vh-4rem)] flex flex-col items-center justify-center py-20 px-4 sm:px-6 overflow-hidden">
-      {/* Radial gradient glow */}
       <div
         className="absolute inset-0 pointer-events-none opacity-20 dark:opacity-100"
         style={{
