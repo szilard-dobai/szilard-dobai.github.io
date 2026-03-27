@@ -11,6 +11,17 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "framed",
+    name: "Framed",
+    logo: "/projects/framed/logo.svg",
+    oneLiner: "Device mockup generator",
+    description:
+      "Create beautiful device mockups in seconds. Upload a screenshot, pick a device frame, and download a high-res image — free, instant, no signup.",
+    images: ["/projects/framed/screenshot.png"],
+    appUrl: "https://framed-gray.vercel.app/",
+    githubUrl: "https://github.com/szilard-dobai/framed",
+  },
+  {
     slug: "my-kitchen-buddy",
     name: "My Kitchen Buddy",
     logo: "/projects/my-kitchen-buddy/logo.svg",
