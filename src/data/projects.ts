@@ -11,6 +11,17 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "shelved",
+    name: "Shelved",
+    logo: "/projects/shelved/logo.svg",
+    oneLiner: "Your bookshelf, beautifully",
+    description:
+      "Turn your reading history into a shareable shelf. Import from Goodreads, StoryGraph, or just your memory — we'll do the rest.",
+    images: ["/projects/shelved/screenshot.png"],
+    appUrl: "https://shelved.ink/",
+    githubUrl: "https://github.com/szilard-dobai/shelved",
+  },
+  {
     slug: "framed",
     name: "Framed",
     logo: "/projects/framed/logo.svg",
